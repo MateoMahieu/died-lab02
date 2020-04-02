@@ -24,7 +24,11 @@ public class App {
 		Producto p9 = new Producto("rollo de papel",99.99);
 		Producto p10 = new Producto("agua mineral",55.99);
 		
-		System.out.println("pedido basico: ");
+		Tramite t1= new Tramite("factura de luz", "lavaise" ,"16:15");
+		
+		c1.agregarPedido(t1);
+		
+		System.out.println("pedido basico: "); //para distinguir que tipo de pedido es
 		System.out.println("Producto agregrado al pedido? "+ pb1.agregarProducto(p1));
 		System.out.println("Producto agregrado al pedido? "+ pb1.agregarProducto(p5));
 		System.out.println("Producto agregrado al pedido? "+ pb1.agregarProducto(p6));
@@ -34,13 +38,15 @@ public class App {
 		
 		pb1.setExpress();
 		
-		System.out.println("Costo del pedido: "+ formato.format(pb1.precio()));
+		System.out.println("Costo del pedido: "+ formato.format(pb1.precio())); //el formato limita a q se muestren hasta 2 digitos luego de la coma
 		
 		c1.agregarPedido(pb1);
 		
+		c1.mostrarListaPedidos();
+		
 		System.out.println("Comision del cadete: "+formato.format(c1.comisiones()));
 		
-		System.out.println("pedido premium: ");
+		System.out.println("pedido premium: ");//para distinguir que tipo de pedido es
 		System.out.println("Producto agregrado al pedido? "+ pp1.agregarProducto(p1));
 		System.out.println("Producto agregrado al pedido? "+ pp1.agregarProducto(p1));
 		System.out.println("Producto agregrado al pedido? "+ pp1.agregarProducto(p2));

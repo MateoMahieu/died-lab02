@@ -2,32 +2,40 @@ package problema02_Herencia;
 
 import java.util.ArrayList;
 
-public class Cadete {
+public class Cadete{
 	
-	private ArrayList<Pedido> listaDePedidos;
+	private ArrayList<Comisionable> listaDePedidos;
 	private String nombre,apellido; //no es necesario en este ejercicio
 	private int dni; //este tampoco
 	
 	
 	public Cadete( String nombre, String apellido, int dni) {
 		
-		this.listaDePedidos = new ArrayList<Pedido>();
+		this.listaDePedidos = new ArrayList<Comisionable>();
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.dni = dni;
 	}
 	
-	public void agregarPedido(Pedido p) {
-		this.listaDePedidos.add(p);
+	public void agregarPedido(Comisionable c) {
+		this.listaDePedidos.add(c);
 	}
 	
+	public void mostrarListaPedidos() {
+		for(Comisionable c: listaDePedidos) {
+			if((c.getClass()) == Tramite.class)
+			System.out.println("tramite");
+			else System.out.println("pedido");
+		}
+	}
 	
 	public double comisiones() {
 		
-		double total =(double) 0;
+		double total = (double) 0;
 		
-		for(Pedido p: listaDePedidos) {
-			total += p.comision();
+		for(Comisionable c: listaDePedidos) {
+			
+			total += c.comision();
 		}
 		return total;
 	}

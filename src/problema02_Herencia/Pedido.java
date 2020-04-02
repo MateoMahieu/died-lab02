@@ -3,7 +3,7 @@ package problema02_Herencia;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public  abstract class Pedido {
+public  abstract class Pedido implements Comisionable{
 	
 	ArrayList<Producto> productos;
 	LocalDate fechaQueSeEntrego;

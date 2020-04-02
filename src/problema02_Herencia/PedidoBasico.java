@@ -49,7 +49,7 @@ public class PedidoBasico extends Pedido {
 	}
 	
 	
-	//calcula la comision que debe cobrar el cadete por el pedido
+	//calcula la comision que debe cobrar el cadete por el pedido,si el pedido no fue entregado devuelve 0.
 	public double comision() {
 		
 		if(this.fechaQueSeEntrego != null) {
