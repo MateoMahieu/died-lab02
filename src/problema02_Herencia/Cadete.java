@@ -21,7 +21,8 @@ public class Cadete{
 		this.listaDePedidos.add(c);
 	}
 	
-	public void mostrarListaPedidos() {
+	public void mostrarListaPedidos() { /*es solo para ver si en listaDePedidos se guardan tramites y pedidos, 
+		                            no tiene utilidad*/
 		for(Comisionable c: listaDePedidos) {
 			if((c.getClass()) == Tramite.class)
 			System.out.println("tramite");
